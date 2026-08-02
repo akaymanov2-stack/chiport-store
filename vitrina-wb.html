@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Витрина товаров — купить на Wildberries</title>
+
+<!--
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │  СТРУКТУРА ПРОЕКТА                                                   │
+  │  vitrina-wb.html         — эта страница (разметка и контент)         │
+  │  css/design-system.css   — общая дизайн-система бренда              │
+  │  css/vitrina.css         — стили только этой страницы                │
+  │                                                                      │
+  │  Порядок подключения важен: система идёт первой, страница второй.    │
+  │  Правка на все страницы бренда → design-system.css,                  │
+  │  правка только для витрины  → vitrina.css.                           │
+  │                                                                      │
+  │  КАК ПОЛЬЗОВАТЬСЯ                                                    │
+  │  1. Замените текст в шапке, в герое и в футере (реквизиты ИП/ИНН).   │
+  │  2. Полоса цифр под героем — заглушки: сверьте их со своим           │
+  │     ассортиментом и условиями магазина перед публикацией.            │
+  │  3. На каждой карточке замените: фото, название, описание, цену      │
+  │     и ссылку в кнопке (href="..." → ссылка на товар на WB).          │
+  │  4. Чтобы получить 3–15 карточек — просто копируйте блок             │
+  │     <article class="product">…</article> нужное число раз.           │
+  │  5. Вставьте счётчик Яндекс.Метрики (см. блок METRIKA внизу файла)   │
+  │     и подставьте её номер в data-ym-counter у тега <body>.           │
+  │  6. Заливайте на хостинг папку целиком: эту страницу переименуйте    │
+  │     в index.html, рядом положите каталог css/.                       │
+  │                                                                      │
+  │  ЧЕК-ЛИСТ ПОД МОДЕРАЦИЮ ЯНДЕКС.ДИРЕКТА (обязательно):                │
+  │  • реквизиты продавца (ИП/ООО, ИНН/ОГРН) — в футере;                 │
+  │  • рабочие контакты (телефон/почта) — в футере;                      │
+  │  • ссылки «Политика конфиденциальности» и «Оферта» — в футере;       │
+  │  • реальные товары, названия и цены (не «пустая» страница-редирект). │
+  │                                                                      │
+  │  ДИЗАЙН-СИСТЕМА                                                      │
+  │  Спецификация: docs/DESIGN_SYSTEM.md · правила проекта: CLAUDE.md    │
+  │  Правила, которые нельзя нарушать при доработке:                     │
+  │  • плоские заливки и один акцент (#1447E6) — кроме кнопок на WB;     │
+  │  • никаких эмодзи и рисованных SVG — круг/квадрат/кольцо и цифры;    │
+  │  • одна тень на страницу; карточки разделяются границами;            │
+  │  • ховер меняет только цвет: без transform, подъёмов и увеличений;   │
+  │  • адаптив на auto-fit + clamp(), без медиазапросов на раскладку.    │
+  │  Согласованное исключение — градиент WB на кнопках «Купить»          │
+  │  и «Открыть магазин»: см. .btn--wb в css/vitrina.css.                │
+  └──────────────────────────────────────────────────────────────────────┘
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/design-system.css">
+<link rel="stylesheet" href="css/vitrina.css">
+</head>
+
+<!-- ⬇ подставьте номер счётчика Метрики вместо 00000000 -->
+<body data-ym-counter="00000000">
+
+  <!-- ШАПКА -->
+  <header class="topbar">
+    <div class="container topbar__row">
+      <div class="brand">
+        <span class="brand__name">RD Store</span>
+        <span class="brand__mark">WILDBERRIES</span>
+      </div>
+      <div class="topbar__side">
+        <span class="chip chip--accent">Официальный магазин</span>
+        <a class="btn btn--sm" href="#catalog">Смотреть товары</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ГЕРОЙ -->
+  <section class="container hero">
+    <div class="row row--chips">
+      <span class="chip chip--accent">Авто-электроника</span>
+      <span class="chip">Оригинал</span>
+    </div>
+    <h1 class="h1">Проверенная<br><span>авто-электроника</span></h1>
+    <p class="lead">Радар-детекторы, видеорегистраторы, алкотестеры и аксессуары. Отобрали то, что реально работает.
+      Оформление и оплата — на Wildberries, с доставкой в любой пункт выдачи.</p>
+    <div class="row">
+      <a class="btn" href="#catalog">Смотреть товары</a>
+      <a class="btn btn--ghost" href="#how">Как это работает</a>
+    </div>
+    <div class="trust">
+      <span>Гарантия производителя</span>
+      <span>Доставка 1–2 дня</span>
+      <span>Возврат по правилам WB</span>
+    </div>
+  </section>
+
+  <!-- ПОЛОСА ЦИФР -->
+  <!-- ⬇ заглушки: сверьте цифры со своими условиями перед публикацией -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stats__item"><span class="stat">12 мес</span><span>гарантия производителя</span></div>
+      <div class="stats__item"><span class="stat">1–2 дня</span><span>доставка в пункт выдачи</span></div>
+      <div class="stats__item"><span class="stat">14 дней</span><span>на возврат по правилам WB</span></div>
+      <div class="stats__item"><span class="stat">100%</span><span>оригинальные товары</span></div>
+    </div>
+  </section>
+
+  <!-- КАТАЛОГ -->
+  <main id="catalog" class="container section">
+    <div class="section__head">
+      <h2 class="h2">Что есть в наличии</h2>
+      <p>Цена и наличие подтверждаются в карточке товара на Wildberries — кнопка ведёт прямо на неё.</p>
+    </div>
+
+    <div class="catalog">
+
+      <!-- ═══ INSPECTOR AT850 — единственный товар с реальными данными ═══
+           Факты о приборе брать только из CLAUDE.md, ничего не добавлять. -->
+      <article class="product">
+        <div class="product__media product__media--fit" style="background-image:url('assets/device-hero.png')">
+          <span class="chip">Алкотестер</span>
+        </div>
+        <div class="product__body">
+          <h3 class="h4">Inspector AT850</h3>
+          <p class="body">Электрохимический сенсор и результат за 15 секунд: проверить себя утром
+            до выезда, а не на посту ДПС. Ресурс — 500 тестов, 3 мундштука в комплекте.</p>
+          <div class="product__stock"><span class="mark mark--dot"></span>В наличии на Wildberries</div>
+          <!-- ⬇ цены-заглушки из CLAUDE.md, заменить на реальные перед публикацией -->
+          <div class="product__price-row">
+            <span class="product__price">2 490 ₽</span>
+            <span class="product__price-old">3 290 ₽</span>
+          </div>
+          <a class="btn btn--wb buy" href="ССЫЛКА_НА_WILDBERRIES" target="_blank" rel="noopener" data-nm="0000000">
+            Купить на Wildberries
+          </a>
+        </div>
+      </article>
+      <!-- ═══════════════════════════════════════════════ -->
+
+      <!-- ═══ КАРТОЧКА-ЗАГЛУШКА (копируйте этот блок целиком) ═══ -->
+      <article class="product">
+        <!-- Фото: вставьте URL в style="background-image:url('...')" -->
+        <div class="product__media" style="background-image:url('')">
+          <span class="chip">Радар-детектор</span>
+        </div>
+        <div class="product__body">
+          <h3 class="h4">Название товара 1</h3>
+          <p class="body">Короткое описание: 1–2 ключевых преимущества, за которые покупают.</p>
+          <div class="product__stock"><span class="mark mark--dot"></span>В наличии на Wildberries</div>
+          <div class="product__price-row">
+            <span class="product__price">14 990 ₽</span>
+            <span class="product__price-old">18 490 ₽</span>
+          </div>
+          <!-- ⬇ href — ссылка на карточку товара на WB. data-nm — артикул (для Метрики) -->
+          <a class="btn btn--wb buy" href="ССЫЛКА_НА_WILDBERRIES" target="_blank" rel="noopener" data-nm="0000000">
+            Купить на Wildberries
+          </a>
+        </div>
+      </article>
+      <!-- ═══════════════════════════════════════════════ -->
+
+      <article class="product">
+        <div class="product__media" style="background-image:url('')">
+          <span class="chip">Видеорегистратор</span>
+        </div>
+        <div class="product__body">
+          <h3 class="h4">Название товара 2</h3>
+          <p class="body">Короткое описание: 1–2 ключевых преимущества, за которые покупают.</p>
+          <div class="product__stock"><span class="mark mark--dot"></span>В наличии на Wildberries</div>
+          <div class="product__price-row">
+            <span class="product__price">9 990 ₽</span>
+          </div>
+          <a class="btn btn--wb buy" href="ССЫЛКА_НА_WILDBERRIES" target="_blank" rel="noopener" data-nm="0000000">
+            Купить на Wildberries
+          </a>
+        </div>
+      </article>
+
+      <article class="product">
+        <div class="product__media" style="background-image:url('')">
+          <span class="chip">Комбо-устройство</span>
+        </div>
+        <div class="product__body">
+          <h3 class="h4">Название товара 3</h3>
+          <p class="body">Короткое описание: 1–2 ключевых преимущества, за которые покупают.</p>
+          <div class="product__stock"><span class="mark mark--dot"></span>В наличии на Wildberries</div>
+          <div class="product__price-row">
+            <span class="product__price">19 990 ₽</span>
+            <span class="product__price-old">23 990 ₽</span>
+          </div>
+          <a class="btn btn--wb buy" href="ССЫЛКА_НА_WILDBERRIES" target="_blank" rel="noopener" data-nm="0000000">
+            Купить на Wildberries
+          </a>
+        </div>
+      </article>
+
+      <article class="product">
+        <div class="product__media" style="background-image:url('')">
+          <span class="chip">Аксессуар</span>
+        </div>
+        <div class="product__body">
+          <h3 class="h4">Название товара 4</h3>
+          <p class="body">Короткое описание: 1–2 ключевых преимущества, за которые покупают.</p>
+          <div class="product__stock"><span class="mark mark--dot"></span>В наличии на Wildberries</div>
+          <div class="product__price-row">
+            <span class="product__price">2 490 ₽</span>
+          </div>
+          <a class="btn btn--wb buy" href="ССЫЛКА_НА_WILDBERRIES" target="_blank" rel="noopener" data-nm="0000000">
+            Купить на Wildberries
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- КАК КУПИТЬ -->
+  <section id="how" class="container section">
+    <div class="section__head">
+      <h2 class="h2">Три шага до покупки</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="label">01</span>
+        <span class="step__title">Выберите товар</span>
+        <span class="body">Сравните модели и цены на этой странице. Здесь только то, что есть в наличии.</span>
+      </div>
+      <div class="step">
+        <span class="label">02</span>
+        <span class="step__title">Перейдите на Wildberries</span>
+        <span class="body">Кнопка на карточке открывает товар в магазине. Оформление и оплата — там же.</span>
+      </div>
+      <div class="step">
+        <span class="label">03</span>
+        <span class="step__title">Заберите в пункте выдачи</span>
+        <span class="body">Товар приезжает в ближайший пункт выдачи, проверить его можно при получении.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container section">
+    <div class="section__head">
+      <h2 class="h2">Коротко о важном</h2>
+    </div>
+    <div class="faq">
+      <div class="faq__row">
+        <span class="faq__q">Почему покупка идёт на Wildberries?</span>
+        <span class="body">Оплата, доставка и возврат проходят по правилам площадки: деньги защищены,
+          товар можно осмотреть при получении.</span>
+      </div>
+      <div class="faq__row">
+        <span class="faq__q">Цены здесь и на Wildberries совпадают?</span>
+        <span class="body">Витрину обновляем вручную, поэтому актуальная цена — всегда та,
+          что указана в карточке товара на Wildberries.</span>
+      </div>
+      <div class="faq__row">
+        <span class="faq__q">Товар оригинальный?</span>
+        <span class="body">Продаём только официально поставленную технику. Гарантия производителя
+          сохраняется, гарантийный талон — в коробке.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФИНАЛЬНЫЙ CTA -->
+  <section class="container section">
+    <div class="cta">
+      <div>
+        <h2 class="h2">Весь ассортимент<br>в одном магазине</h2>
+        <p>В витрине — избранное. Остальные позиции, отзывы и актуальные цены смотрите на странице магазина.</p>
+      </div>
+      <div class="cta__side">
+        <!-- ⬇ href — ссылка на страницу вашего магазина на WB -->
+        <a class="btn btn--wb btn--lg" href="ССЫЛКА_НА_МАГАЗИН_WB" target="_blank" rel="noopener">Открыть магазин на Wildberries</a>
+        <span class="cta__note">Оплата и доставка — на стороне Wildberries</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР / ЮРИДИЧЕСКИЙ БЛОК (нужен для Директа) -->
+  <footer class="foot">
+    <div class="container">
+      <div class="foot__grid">
+        <div class="foot__col">
+          <span class="label">ПРОДАВЕЦ</span>
+          <div>
+            ИП Фамилия Имя Отчество<br>
+            ИНН 000000000000<br>
+            ОГРНИП 000000000000000
+          </div>
+        </div>
+        <div class="foot__col">
+          <span class="label">КОНТАКТЫ</span>
+          <div>
+            Телефон: +7 (000) 000-00-00<br>
+            E-mail: mail@example.ru
+          </div>
+        </div>
+        <div class="foot__col">
+          <span class="label">ДОКУМЕНТЫ</span>
+          <div>
+            <a href="#">Политика конфиденциальности</a><br>
+            <a href="#">Публичная оферта</a>
+          </div>
+        </div>
+      </div>
+      <div class="disclaimer fine">
+        Оформление заказа, оплата и доставка осуществляются на сайте Wildberries. Цены на данной странице
+        носят информационный характер; актуальная стоимость указана в карточке товара на Wildberries.
+        Inspector AT850 — бытовой алкотестер. Не является средством измерения для официального
+        освидетельствования.
+        © <span id="year"></span> RD Store. Все права защищены.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* Отправляем цель в Метрику при клике «Купить на WB».
+       Ссылка открывается в любом случае (даже без JS), поэтому клик не теряется. */
+    (function(){
+      var counter = document.body.dataset.ymCounter;
+      document.querySelectorAll('.buy').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if (typeof ym === 'function' && counter && counter !== '00000000') {
+            ym(counter, 'reachGoal', 'buy_wb', { nm: btn.dataset.nm || '' });
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!--
+  ═══ METRIKA ═══════════════════════════════════════════════════════════
+  Вставьте сюда счётчик Яндекс.Метрики (Метрика → Настройки → «Код счётчика»)
+  и продублируйте его номер в атрибут data-ym-counter у тега <body> выше.
+
+  В Метрике создайте ЦЕЛЬ типа «JavaScript-событие» с идентификатором: buy_wb
+  Именно по ней настраивайте автостратегии в Директе (оптимизация по клику
+  на кнопку, т.к. сам факт покупки Wildberries обратно не передаёт).
+  ═══════════════════════════════════════════════════════════════════════
+  -->
+
+</body>
+</html>

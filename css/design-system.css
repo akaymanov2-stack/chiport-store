@@ -1,0 +1,188 @@
+/* ============================================================================
+   ДИЗАЙН-СИСТЕМА БРЕНДА
+   Реализация спецификации docs/DESIGN_SYSTEM.md
+
+   Файл общий для всех страниц бренда (витрина, лендинг AT850 и т.д.).
+   Подключается ПЕРВЫМ, до стилей конкретной страницы.
+
+   Правки сюда вносятся, только если меняется сама спецификация.
+   Всё, что нужно одной странице, — в её собственном CSS, не здесь.
+
+   Принципы, которые этот файл поддерживает:
+   1. Никаких градиентов. Плоские заливки, один акцентный цвет.
+   2. Никаких эмодзи и рисованных SVG. Смысловые метки — простая геометрия
+      (круг, квадрат, кольцо) и крупные цифры.
+   3. Одна тень на страницу — под фотографией товара.
+   4. Адаптив без медиазапросов: auto-fit + clamp().
+   5. Ховер меняет только цвет. Трансформаций и подъёмов в системе нет.
+   ========================================================================= */
+
+/* ═══ Токены ══════════════════════════════════════════════════════════════ */
+:root{
+  /* Цвет */
+  --ink:               #0B1220;
+  --accent:            #1447E6;
+  --accent-hover:      #0B31A8;
+  --accent-tint:       #EEF3FE;
+  --accent-tint-2:     #F7F9FE;
+  --panel:             #F1F5FB;
+  --panel-neutral:     #F2F4F7;
+  --border:            #E6EBF2;
+  --border-strong:     #D8DFE9;
+  --text-primary-soft: #26303F;
+  --text-secondary:    #45505F;
+  --text-muted:        #6B7686;
+  --text-faint:        #8A94A4;
+  --on-dark-muted:     #98A3B3;
+  --on-accent-muted:   #C9D8FF;
+  --on-accent-faint:   #8FAAFF;
+  --surface:           #FFFFFF;
+
+  /* Типографика */
+  --font: 'Manrope', Helvetica, Arial, sans-serif;
+
+  /* Скругления */
+  --r-card:   22px;
+  --r-panel:  26px;
+  --r-block:  32px;
+  --r-chip:   16px;
+  --r-pill:   999px;
+  --r-square: 8px;
+
+  /* Раскладка */
+  --container:   1180px;
+  --gutter:      28px;
+  --section-gap: 88px;
+
+  /* Тени */
+  --shadow-product: 0 34px 46px rgba(11, 18, 32, 0.26);
+  --shadow-chip:    0 12px 30px rgba(11, 18, 32, 0.12);
+}
+
+/* ═══ База ════════════════════════════════════════════════════════════════ */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--surface);
+  color:var(--ink);
+  font-family:var(--font);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  text-wrap:pretty;
+}
+img{display:block;max-width:100%}
+a{color:var(--accent);text-decoration:none}
+
+/* ═══ Раскладка ═══════════════════════════════════════════════════════════
+   Пороги minmax по типу контента: статистика 190px · шаги 260px ·
+   карточки и FAQ 280–300px · крупные панели и hero 320–330px.
+   Группы элементов раскладывать flex/grid с gap, не маргинами.
+   ======================================================================== */
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.section{padding-top:var(--section-gap)}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+
+/* ═══ Типографическая шкала ═══════════════════════════════════════════════ */
+.h1{font:800 clamp(46px,5.4vw,78px)/0.94 var(--font);letter-spacing:-.035em;text-transform:uppercase}
+.h2{font:800 clamp(30px,3.2vw,44px)/1.05 var(--font);letter-spacing:-.03em}
+.h3{font:800 24px/1.2 var(--font);letter-spacing:-.02em}   /* заголовок панели */
+.h4{font:800 20px/1.25 var(--font);letter-spacing:-.02em}  /* заголовок карточки */
+.stat{font:800 42px/1 var(--font);letter-spacing:-.03em}
+.price{font:800 40px/1 var(--font);letter-spacing:-.03em}
+.price-old{font:600 18px var(--font);color:var(--text-faint);text-decoration:line-through}
+.lead{font:400 18px/1.5 var(--font);color:var(--text-secondary)}
+.body{font:400 15.5px/1.55 var(--font);color:var(--text-secondary)}
+.label{font:800 13px/1 var(--font);letter-spacing:.1em;color:var(--accent)}
+.fine{font:400 13px/1.5 var(--font);color:var(--text-faint)}
+
+/* ═══ Кнопки ══════════════════════════════════════════════════════════════
+   Ховер — только смена цвета фона / границы / текста.
+   ======================================================================== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:56px;padding:0 34px;border-radius:var(--r-pill);
+  background:var(--accent);color:#fff;font:700 16px var(--font);
+  white-space:nowrap;
+  transition:background-color .18s ease,border-color .18s ease,color .18s ease;
+}
+.btn:hover{background:var(--accent-hover);color:#fff}
+
+/* Компактный вариант — для шапки */
+.btn--sm{height:42px;padding:0 22px;font-size:14px}
+
+/* Крупный вариант — для финального CTA */
+.btn--lg{height:60px;padding:0 40px;font-size:17px;font-weight:800}
+
+/* Вторичная */
+.btn--ghost{background:var(--surface);border:1px solid var(--border-strong);color:var(--ink)}
+.btn--ghost:hover{background:var(--surface);border-color:var(--ink);color:var(--ink)}
+
+/* Инверсная — на акцентном фоне */
+.btn--inverse{background:#fff;color:var(--accent)}
+.btn--inverse:hover{background:var(--ink);color:#fff}
+
+/* ═══ Чип ═════════════════════════════════════════════════════════════════ */
+.chip{
+  display:inline-flex;align-items:center;
+  padding:7px 14px;border-radius:var(--r-pill);white-space:nowrap;
+  font:700 12.5px var(--font);letter-spacing:.02em;
+  background:var(--panel-neutral);color:var(--text-secondary);
+}
+.chip--accent{background:var(--accent-tint);color:var(--accent)}
+
+/* ═══ Карточка ════════════════════════════════════════════════════════════
+   Карточки разделяются границами, не тенями.
+   ======================================================================== */
+.card{
+  border:1px solid var(--border);border-radius:var(--r-card);padding:28px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.card--featured{border:2px solid var(--accent);background:var(--accent-tint-2);padding:30px}
+
+/* ═══ Панель ══════════════════════════════════════════════════════════════ */
+.panel{background:var(--panel);border-radius:var(--r-panel);padding:34px}
+.panel--outlined{background:#fff;border:1px solid var(--border)}
+
+/* ═══ Геометрические метки (замена иконок) ════════════════════════════════ */
+.mark{width:34px;height:34px;display:block;flex:none}
+.mark--dot{border-radius:var(--r-pill);background:var(--accent)}
+.mark--square{border-radius:var(--r-square);background:var(--ink)}
+.mark--ring{border-radius:var(--r-pill);border:8px solid var(--accent)}
+
+/* ═══ Блок статистики ═════════════════════════════════════════════════════
+   Тёмная full-bleed полоса. Внутрь кладётся .container.stats__grid.
+   ======================================================================== */
+.stats{background:var(--ink);color:#fff}
+.stats__grid{
+  display:grid;gap:28px;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  padding-top:44px;padding-bottom:44px;
+}
+.stats__item{display:flex;flex-direction:column;gap:6px}
+.stats__item span:last-child{font:600 14px var(--font);color:var(--on-dark-muted)}
+
+/* ═══ Нумерованный шаг ════════════════════════════════════════════════════ */
+.steps{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.step{display:flex;flex-direction:column;gap:10px;border-top:3px solid var(--accent);padding-top:18px}
+.step__title{font:800 21px/1.25 var(--font);letter-spacing:-.02em}
+
+/* ═══ Строка FAQ ══════════════════════════════════════════════════════════ */
+.faq{display:flex;flex-direction:column}
+.faq__row{
+  display:grid;gap:12px 40px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  padding:24px 0;border-top:1px solid var(--border);
+}
+.faq__row:last-child{border-bottom:1px solid var(--border)}
+.faq__q{font:800 18px/1.3 var(--font);letter-spacing:-.02em}
+
+/* ═══ Таблица характеристик ═══════════════════════════════════════════════ */
+.specs{display:grid;grid-template-columns:1fr auto;gap:14px 20px;font-size:15.5px}
+.specs__key{color:var(--text-muted)}
+.specs__val{font-weight:700;text-align:right}
+
+/* ═══ Доступность ═════════════════════════════════════════════════════════ */
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r-square)}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+}

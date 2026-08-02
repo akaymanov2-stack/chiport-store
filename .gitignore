@@ -1,0 +1,19 @@
+# ОС
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+
+# Редакторы
+.vscode/
+.idea/
+*.swp
+*~
+
+# Локальные настройки Claude Code (личные, не общие для проекта)
+.claude/settings.local.json
+
+# Если появится сборка
+node_modules/
+dist/
+npm-debug.log*
