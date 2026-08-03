@@ -1,13 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CHIPORT Store">
   <!-- Круг — акцент дизайн-системы (--accent), буквы — чернильный (--ink).
        Шрифт системный, а не Manrope: фавиконка рендерится вне контекста
-       страницы и веб-шрифт туда не подгружается. -->
+       страницы и веб-шрифт туда не подгружается.
+       Две буквы вместо пяти: во вкладке иконка занимает 16 пикселей,
+       на пять букв там приходится по три пикселя и они сливаются. -->
   <circle cx="32" cy="32" r="32" fill="#1447E6"/>
-  <text x="32" y="37.6"
+  <text x="32" y="42.7"
         text-anchor="middle"
         font-family="Arial, Helvetica, sans-serif"
         font-weight="700"
-        font-size="16"
-        letter-spacing="-0.5"
-        fill="#0B1220">CHPRT</text>
+        font-size="30"
+        fill="#0B1220">CH</text>
 </svg>
