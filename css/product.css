@@ -26,6 +26,8 @@
 }
 .media img{display:block;width:100%;height:auto}
 .media--card{border-radius:var(--r-card)}
+/* Инфографика, которой не нужна половина экрана: ставим по центру колонкой */
+.media--narrow{max-width:420px;margin-left:auto;margin-right:auto}
 
 /* ═══ Секция «текст рядом с изображением» ═════════════════════════════════ */
 .split{

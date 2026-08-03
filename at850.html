@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspector AT850 — электрохимический алкотестер | CHIPORT Store</title>
+<meta name="description" content="Inspector AT850 — бытовой алкотестер с электрохимическим сенсором. Диапазон 0.00–2.00 мг/л, заявленная точность ±0.025 мг/л, предупреждение о превышении, 3 мундштука и батарейки в комплекте. Сделано в Южной Корее.">
+
+<!--
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │  СТРАНИЦА ТОВАРА                                                     │
+  │  Подключение CSS строго в этом порядке:                              │
+  │    design-system.css → site.css → product.css                        │
+  │                                                                      │
+  │  ЗАГЛУШКИ, которые надо заменить перед публикацией:                  │
+  │  • контакты в футере — телефон и почта продавца;                     │
+  │  • блок цены закомментирован — раскомментировать, когда будет цена;  │
+  │  • data-ym-counter у <body> → номер счётчика Метрики.                │
+  │                                                                      │
+  │  ФАКТЫ О ПРИБОРЕ — только из карточек продавца в assets/alko-850/.   │
+  │  Внимание: карточки производителя дают 15–35 сек на прогрев сенсора  │
+  │  и 3–35 сек на само измерение. Формулировка «результат за 15 секунд» │
+  │  из старого брифа им противоречит и здесь не используется.           │
+  └──────────────────────────────────────────────────────────────────────┘
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/design-system.css">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/product.css">
+<script src="js/analytics.js" defer></script>
+</head>
+
+<!-- ⬇ подставьте номер счётчика Метрики вместо 00000000 -->
+<body data-ym-counter="00000000">
+
+  <!-- ШАПКА -->
+  <header class="topbar">
+    <div class="container topbar__row">
+      <a class="brand" href="index.html">
+        <span class="brand__name">CHIPORT Store</span>
+        <span class="brand__mark">WILDBERRIES</span>
+      </a>
+      <div class="topbar__side">
+        <a class="btn btn--sm btn--ghost" href="index.html#catalog">Все товары</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ГЕРОЙ -->
+  <section class="container hero hero--media">
+    <div class="hero__text">
+      <div class="row row--chips">
+        <span class="chip chip--accent">Электрохимический сенсор</span>
+        <span class="chip">Сделано в Южной Корее</span>
+      </div>
+      <h1 class="h1">Можно ли за руль.<br>Ответ <span>цифрой</span></h1>
+      <p class="lead">Алкотестер Inspector AT850 отвечает на главный вопрос утра. Дома, до выезда,
+        а не на посту ДПС. Ощущения врут, прибор говорит цифрой.</p>
+
+      <!-- ⬇ раскомментировать, когда будет цена
+      <div class="row" style="align-items:baseline">
+        <span class="price">0 000 ₽</span>
+        <span class="price-old">0 000 ₽</span>
+      </div>
+      -->
+
+      <div class="row">
+        <a class="btn btn--wb buy" href="https://www.wildberries.ru/catalog/1249816737/detail.aspx" target="_blank" rel="noopener" data-nm="1249816737">
+          Купить на Wildberries
+        </a>
+        <a class="btn btn--ghost" href="#how">Как это работает</a>
+      </div>
+      <div class="trust">
+        <span>Гарантия 12 месяцев</span>
+        <span>3 мундштука в комплекте</span>
+        <span>Батарейки в коробке</span>
+      </div>
+    </div>
+    <div class="media">
+      <img src="assets/alko-850/1.webp" alt="Алкотестер Inspector AT850" width="900" height="1200">
+    </div>
+  </section>
+
+  <!-- ПОЛОСА ЦИФР -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stats__item"><span class="stat">0–2.00</span><span>мг/л, диапазон измерений</span></div>
+      <div class="stats__item"><span class="stat">±0.025</span><span>мг/л, заявленная точность</span></div>
+      <div class="stats__item"><span class="stat">500</span><span>тестов между калибровками</span></div>
+      <div class="stats__item"><span class="stat">87 г</span><span>вес без батареек</span></div>
+    </div>
+  </section>
+
+  <!-- БЫТОВЫЕ СИТУАЦИИ -->
+  <section class="container section">
+    <div class="section__head">
+      <h2 class="h2">Пять минут спокойствия<br>вместо лишения прав</h2>
+      <p>Ощущения врут: «вроде норм» и превышение выглядят одинаково. Разницу видно только на экране.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <span class="mark mark--dot"></span>
+        <span class="h4">Утро после вечера</span>
+        <span class="body">Вчера было два бокала. Проверьте себя до того, как сядете за руль,
+          а не после того, как вас остановили.</span>
+      </div>
+      <div class="card">
+        <span class="mark mark--square"></span>
+        <span class="h4">Перед сменой</span>
+        <span class="body">Водителям, курьерам, таксистам — собственный предрейсовый контроль,
+          который помещается в бардачок.</span>
+      </div>
+      <div class="card">
+        <span class="mark mark--ring"></span>
+        <span class="h4">Гости и застолья</span>
+        <span class="body">Один прибор на всю компанию: мундштуки сменные, каждый проверяется
+          своим, а не общим.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ИЗМЕРЕНИЕ -->
+  <section class="container section">
+    <div class="split">
+      <div class="split__text">
+        <h2 class="h2">Измеряет алкоголь<br>в выдыхаемом воздухе</h2>
+        <p class="body">Электрохимический сенсор реагирует именно на этанол, а не на «что-то
+          в воздухе». Поэтому его показаниям можно верить, а не пересдавать тест по три раза,
+          гадая, что сработало.</p>
+        <ul class="facts">
+          <li>Диапазон измерений 0.00–2.00 мг/л</li>
+          <li>Заявленная точность показаний ±0.025 мг/л</li>
+          <li>Измерение через сменный мундштук</li>
+        </ul>
+      </div>
+      <div class="media media--card">
+        <img src="assets/alko-850/2.webp" alt="Диапазон измерений и точность алкотестера" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ДИСПЛЕЙ И ПРЕДУПРЕЖДЕНИЕ -->
+  <section class="container section">
+    <div class="split split--flip">
+      <div class="split__text">
+        <h2 class="h2">Понятный результат<br>и предупреждение</h2>
+        <p class="body">Четырёхразрядный дисплей показывает результат измерения. Если значение
+          выше 0.13 мг/л, подсветка становится оранжевой и включается предупреждающий
+          звуковой сигнал — не нужно вглядываться в цифры и вспоминать нормы.</p>
+        <ul class="facts">
+          <li>Цифровое значение на подсвеченном экране</li>
+          <li>Статусы READY, WAIT и WARN</li>
+          <li>Индикатор уровня заряда батареи</li>
+        </ul>
+      </div>
+      <div class="media media--card">
+        <img src="assets/alko-850/3.webp" alt="Дисплей алкотестера: результат измерения и предупреждение" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ШАГИ -->
+  <section id="how" class="container section">
+    <div class="section__head">
+      <h2 class="h2">Проверка за четыре шага</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="label">01</span>
+        <span class="step__title">Откройте крышку</span>
+        <span class="body">Прибор включается, установите мундштук.</span>
+      </div>
+      <div class="step">
+        <span class="label">02</span>
+        <span class="step__title">Дождитесь READY</span>
+        <span class="body">Сенсор выходит на готовность за 15–35 секунд.</span>
+      </div>
+      <div class="step">
+        <span class="label">03</span>
+        <span class="step__title">Выдохните ровно</span>
+        <span class="body">Равномерный выдох в мундштук до звукового сигнала.</span>
+      </div>
+      <div class="step">
+        <span class="label">04</span>
+        <span class="step__title">Смотрите на цифру</span>
+        <span class="body">Измерение занимает от 3 до 35 секунд.</span>
+      </div>
+    </div>
+    <p class="fine" style="margin-top:28px">Перед тестом нужно выждать не менее 20 минут после
+      употребления алкоголя, еды или курения — иначе прибор измерит остатки во рту, а не в лёгких.</p>
+    <div class="media media--card media--narrow" style="margin-top:40px">
+      <img src="assets/alko-850/4.webp" alt="Порядок проверки на алкотестере" width="900" height="1200" loading="lazy">
+    </div>
+  </section>
+
+  <!-- МУНДШТУКИ -->
+  <section class="container section">
+    <div class="split">
+      <div class="split__text">
+        <h2 class="h2">Мундштук всегда<br>под рукой</h2>
+        <p class="body">Измерение выполняется через мундштук. В комплекте их три, а в нижней части
+          корпуса есть отдельный отсек для хранения — не придётся искать их по бардачку
+          в самый нужный момент.</p>
+        <ul class="facts">
+          <li>3 сменных мундштука в комплекте</li>
+          <li>Встроенный отсек в корпусе</li>
+          <li>Складной корпус закрывает сенсор от пыли</li>
+        </ul>
+      </div>
+      <div class="media media--card">
+        <img src="assets/alko-850/5.webp" alt="Мундштуки и встроенный отсек для их хранения" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- КОМПАКТНОСТЬ -->
+  <section class="container section">
+    <div class="split split--flip">
+      <div class="split__text">
+        <h2 class="h2">Помещается<br>в ладонь и в бардачок</h2>
+        <p class="body">В сложенном виде — 90 × 50 × 25 мм и 87 граммов без батареек. Прибор живёт
+          в бардачке или в кармане куртки и не занимает места, а работает от двух обычных
+          пальчиковых батареек, которые продаются в любом магазине у дома.</p>
+        <ul class="facts">
+          <li>Размер в сложенном состоянии 90 × 50 × 25 мм</li>
+          <li>Вес 87 г без элементов питания</li>
+          <li>Питание 2 × 1,5 В AAA, комплект в коробке</li>
+          <li>Рабочая температура от 5 до 40 °C</li>
+        </ul>
+      </div>
+      <div class="media media--card">
+        <img src="assets/alko-850/6.webp" alt="Компактный складной корпус алкотестера в ладони" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРЕДУПРЕЖДЕНИЯ И КАЛИБРОВКА -->
+  <section class="container section">
+    <div class="split">
+      <div class="split__text">
+        <h2 class="h2">Подскажет, когда<br>требуется внимание</h2>
+        <p class="body">Прибор не молчит, если что-то пошло не так: вместо цифры на экране
+          появляется короткий код, по которому сразу понятно, что делать.</p>
+        <ul class="facts">
+          <li><b>BAT</b> — низкий заряд, пора менять батарейки</li>
+          <li><b>FLO</b> — неверный выдох, тест нужно повторить</li>
+          <li><b>OUT</b> — температура вне рабочего диапазона 5–40 °C</li>
+          <li><b>CAL</b> — требуется калибровка</li>
+        </ul>
+        <p class="fine">Для сохранения точности калибровка требуется каждые 12 месяцев или после
+          500 тестов. Выполняет её сервисный центр; срок сверяйте с инструкцией
+          и условиями производителя.</p>
+      </div>
+      <div class="media media--card">
+        <img src="assets/alko-850/7.webp" alt="Коды предупреждений на экране алкотестера" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- КОМПЛЕКТАЦИЯ И ХАРАКТЕРИСТИКИ -->
+  <section id="specs" class="container section">
+    <div class="split split--flip">
+      <div class="split__text" style="align-self:start;width:100%">
+        <div class="panel" style="width:100%">
+          <span class="h3">Что в коробке</span>
+          <ul class="facts" style="margin-top:20px">
+            <li>Алкотестер Inspector AT850</li>
+            <li>3 сменных мундштука</li>
+            <li>2 батарейки AAA</li>
+            <li>Документация и гарантийный талон</li>
+          </ul>
+        </div>
+        <div class="panel panel--outlined" style="width:100%">
+          <span class="h3">Характеристики</span>
+          <div class="specs" style="margin-top:20px">
+            <span class="specs__key">Тип сенсора</span><span class="specs__val">Электрохимический</span>
+            <span class="specs__key">Диапазон измерений</span><span class="specs__val">0.00 – 2.00 мг/л</span>
+            <span class="specs__key">Заявленная точность</span><span class="specs__val">±0.025 мг/л</span>
+            <span class="specs__key">Порог предупреждения</span><span class="specs__val">0.13 мг/л</span>
+            <span class="specs__key">Дисплей</span><span class="specs__val">4-разрядный, с подсветкой</span>
+            <span class="specs__key">Готовность сенсора</span><span class="specs__val">15 – 35 сек</span>
+            <span class="specs__key">Время измерения</span><span class="specs__val">3 – 35 сек</span>
+            <span class="specs__key">Калибровка</span><span class="specs__val">12 мес или 500 тестов</span>
+            <span class="specs__key">Питание</span><span class="specs__val">2 × 1,5 В AAA</span>
+            <span class="specs__key">Рабочая температура</span><span class="specs__val">5 – 40 °C</span>
+            <span class="specs__key">Размеры сложенного</span><span class="specs__val">90 × 50 × 25 мм</span>
+            <span class="specs__key">Вес</span><span class="specs__val">87 г без батареек</span>
+            <span class="specs__key">Производство</span><span class="specs__val">Южная Корея</span>
+            <span class="specs__key">Гарантия</span><span class="specs__val">12 месяцев</span>
+          </div>
+        </div>
+      </div>
+      <div class="media media--card">
+        <img src="assets/alko-850/8.webp" alt="Комплектация алкотестера Inspector AT850" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container section">
+    <div class="section__head">
+      <h2 class="h2">Коротко о важном</h2>
+    </div>
+    <div class="faq">
+      <div class="faq__row">
+        <span class="faq__q">Когда можно тестироваться?</span>
+        <span class="body">Не ранее чем через 20 минут после алкоголя, еды или курения. Раньше прибор
+          поймает пары во рту и завысит результат.</span>
+      </div>
+      <div class="faq__row">
+        <span class="faq__q">Как часто нужна калибровка?</span>
+        <span class="body">Каждые 12 месяцев или после 500 тестов — что наступит раньше. Прибор сам
+          напомнит кодом CAL на экране, выполняет калибровку сервисный центр.</span>
+      </div>
+      <div class="faq__row">
+        <span class="faq__q">Это то же, что у инспектора ДПС?</span>
+        <span class="body">Тип сенсора тот же, но прибор бытовой: его показания носят информационный
+          характер и нужны для личного решения «ехать или не ехать», а не для официального
+          освидетельствования.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФИНАЛЬНЫЙ CTA -->
+  <section class="container section">
+    <div class="cta">
+      <div>
+        <h2 class="h2">Не гадайте.<br>Измерьте.</h2>
+        <p>Одна поездка на такси стоит дороже сомнений. Один AT850 закрывает вопрос
+          на годы вперёд.</p>
+      </div>
+      <div class="cta__side">
+        <a class="btn btn--wb btn--lg buy" href="https://www.wildberries.ru/catalog/1249816737/detail.aspx" target="_blank" rel="noopener" data-nm="1249816737">
+          Купить на Wildberries
+        </a>
+        <span class="cta__note">Актуальная цена — в карточке товара на Wildberries</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР / ЮРИДИЧЕСКИЙ БЛОК -->
+  <footer class="foot">
+    <div class="container">
+      <div class="foot__grid">
+        <div class="foot__col">
+          <span class="label">ПРОДАВЕЦ</span>
+          <div>
+            ИП Потапов Александр Михайлович<br>
+            ИНН 772882524094<br>
+            ОГРНИП 326774600010430
+          </div>
+        </div>
+        <div class="foot__col">
+          <span class="label">КОНТАКТЫ</span>
+          <!-- ⬇ ЗАГЛУШКА: подставить рабочие телефон и почту.
+               Без них Яндекс.Директ не пропустит страницу на модерации. -->
+          <div>
+            Телефон: +7 (000) 000-00-00<br>
+            E-mail: mail@example.ru
+          </div>
+        </div>
+        <div class="foot__col">
+          <span class="label">ДОКУМЕНТЫ</span>
+          <div>
+            <a href="#">Политика конфиденциальности</a><br>
+            <a href="#">Публичная оферта</a>
+          </div>
+        </div>
+      </div>
+      <div class="disclaimer fine">
+        Оформление заказа, оплата и доставка осуществляются на сайте Wildberries. Характеристики
+        приведены по данным карточки товара; актуальная стоимость указана в карточке на Wildberries.
+        Inspector AT850 — бытовой алкотестер. Показания носят информационный характер, прибор
+        не является средством измерения для официального освидетельствования.
+        © <span id="year"></span> CHIPORT Store. Все права защищены.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
