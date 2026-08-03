@@ -52,6 +52,10 @@
 .product__body .body{flex:1}
 .product__stock{display:inline-flex;align-items:center;gap:8px;font:700 13px var(--font);color:var(--accent)}
 .product__stock .mark{width:8px;height:8px}
+/* Товара ещё нет в продаже. Акцентный синий читается как «есть в наличии»,
+   поэтому статус приглушаем — иначе метка спорит с собственным текстом. */
+.product__stock--soon{color:var(--text-faint)}
+.product__stock--soon .mark{background:var(--border-strong)}
 .product__price-row{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px;margin-top:2px}
 /* Цена в карточке мельче системной .price (40px): та рассчитана на герой */
 .product__price{font:800 26px/1 var(--font);letter-spacing:-.02em}
