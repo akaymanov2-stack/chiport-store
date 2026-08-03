@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspector Bravo S Pro — видеорегистратор с радар-детектором | CHIPORT Store</title>
+<meta name="description" content="Inspector Bravo S Pro — комбо-устройство: сигнатурный радар-детектор и видеорегистратор Full HD в одном корпусе. База камер России и СНГ с ежедневным обновлением, магнитное крепление, управление через приложение по Wi-Fi.">
+
+<!--
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │  СТРАНИЦА ТОВАРА                                                     │
+  │  Подключение CSS строго в этом порядке:                              │
+  │    design-system.css → site.css → product.css                        │
+  │  Правка на все страницы бренда → site.css                            │
+  │  Правка на все страницы товаров → product.css                        │
+  │                                                                      │
+  │  ЗАГЛУШКИ, которые надо заменить перед публикацией:                  │
+  │  • href у кнопок «Купить» → ссылка на карточку товара на WB;         │
+  │  • data-nm → артикул товара (уходит в цель Метрики buy_wb);          │
+  │  • блок цены закомментирован — раскомментировать, когда будет цена;  │
+  │  • реквизиты продавца и контакты в футере;                           │
+  │  • data-ym-counter у <body> → номер счётчика Метрики.                │
+  │                                                                      │
+  │  ФАКТЫ О ПРИБОРЕ берутся только из карточек продавца в               │
+  │  assets/bravo-s-pro/. Ничего сверх того, что там есть, не добавлять. │
+  └──────────────────────────────────────────────────────────────────────┘
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/design-system.css">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/product.css">
+<script src="js/analytics.js" defer></script>
+</head>
+
+<!-- ⬇ подставьте номер счётчика Метрики вместо 00000000 -->
+<body data-ym-counter="00000000">
+
+  <!-- ШАПКА -->
+  <header class="topbar">
+    <div class="container topbar__row">
+      <a class="brand" href="index.html">
+        <span class="brand__name">CHIPORT Store</span>
+        <span class="brand__mark">WILDBERRIES</span>
+      </a>
+      <div class="topbar__side">
+        <a class="btn btn--sm btn--ghost" href="index.html#catalog">Все товары</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ГЕРОЙ -->
+  <section class="container hero hero--media">
+    <div class="hero__text">
+      <div class="row row--chips">
+        <span class="chip chip--accent">Комбо 2 в 1</span>
+        <span class="chip">Сделано в Корее</span>
+      </div>
+      <h1 class="h1">Камеры видит.<br>Права <span>защищает</span></h1>
+      <p class="lead">Сигнатурный радар-детектор и видеорегистратор Full HD в одном корпусе.
+        Одно устройство на лобовом стекле вместо двух и один провод вместо двух.</p>
+
+      <!-- ⬇ раскомментировать, когда будет цена
+      <div class="row" style="align-items:baseline">
+        <span class="price">0 000 ₽</span>
+        <span class="price-old">0 000 ₽</span>
+      </div>
+      -->
+
+      <div class="row">
+        <!-- ⬇ href — ссылка на карточку товара на WB. data-nm — артикул -->
+        <a class="btn btn--wb buy" href="ССЫЛКА_НА_WILDBERRIES" target="_blank" rel="noopener" data-nm="0000000">
+          Купить на Wildberries
+        </a>
+        <a class="btn btn--ghost" href="#specs">Характеристики</a>
+      </div>
+      <div class="trust">
+        <span>База камер обновляется каждый день</span>
+        <span>Магнитное крепление в комплекте</span>
+        <span>Гарантийный талон в коробке</span>
+      </div>
+    </div>
+    <div class="media">
+      <img src="assets/bravo-s-pro/1.webp" alt="Видеорегистратор с радар-детектором Inspector Bravo S Pro" width="900" height="1200">
+    </div>
+  </section>
+
+  <!-- ПОЛОСА ЦИФР -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stats__item"><span class="stat">1080p</span><span>запись Full HD</span></div>
+      <div class="stats__item"><span class="stat">360°</span><span>поворот на креплении</span></div>
+      <div class="stats__item"><span class="stat">6</span><span>типов камер в базе</span></div>
+      <div class="stats__item"><span class="stat">75×65</span><span>миллиметров корпус</span></div>
+    </div>
+  </section>
+
+  <!-- ЧТО ДЕЛАЕТ -->
+  <section class="container section">
+    <div class="section__head">
+      <h2 class="h2">Два прибора, один провод</h2>
+      <p>Радар-детектор и регистратор обычно живут на стекле по отдельности: два корпуса, два кабеля,
+        два разъёма в прикуривателе. Здесь всё это в одном устройстве.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <span class="mark mark--dot"></span>
+        <span class="h4">Видит камеры заранее</span>
+        <span class="body">LNA-усилитель расширяет дальность обнаружения. У вас остаётся время
+          спокойно сбросить скорость, а не объясняться потом с письмом счастья.</span>
+      </div>
+      <div class="card">
+        <span class="mark mark--square"></span>
+        <span class="h4">Ловит мобильные засады</span>
+        <span class="body">Переносные комплексы ставят там, где вчера было пусто, и ни в одной
+          GPS-базе их нет. Радарная часть находит их по сигналу.</span>
+      </div>
+      <div class="card">
+        <span class="mark mark--ring"></span>
+        <span class="h4">Пишет дорогу в Full HD</span>
+        <span class="body">1080p фиксирует, что было на самом деле. Спорный момент защищается
+          от перезаписи одной кнопкой прямо на ходу.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- МОБИЛЬНЫЕ ЗАСАДЫ -->
+  <section class="container section">
+    <div class="split">
+      <div class="split__text">
+        <h2 class="h2">Засады, которых нет<br>ни в одной базе</h2>
+        <p class="body">GPS-база знает стационарные камеры: они годами висят на одних и тех же столбах.
+          Треногу вчера поставили на обочине, сегодня перенесли на другой километр — в базе её нет
+          и не будет. Радарная часть ловит такие комплексы по сигналу, а не по координатам.</p>
+        <ul class="facts">
+          <li>Оповещение о засадах по радарной части</li>
+          <li>Сигнатурная обработка сигнала</li>
+          <li>LNA-усилитель расширяет дальность</li>
+        </ul>
+      </div>
+      <div class="media media--card">
+        <img src="assets/bravo-s-pro/2.webp" alt="Оповещение о мобильной засаде на экране прибора" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- КРЕПЛЕНИЕ -->
+  <section class="container section">
+    <div class="split split--flip">
+      <div class="split__text">
+        <h2 class="h2">Ставится один раз,<br>снимается за секунду</h2>
+        <p class="body">Площадка на двустороннем скотче 3M остаётся на стекле, прибор садится на магнит.
+          Снять на мойку или убрать из машины на ночь — одно движение, без раскручивания
+          и без присосок, которые отклеиваются на жаре.</p>
+        <ul class="facts">
+          <li>Магнитное крепление</li>
+          <li>Двусторонний скотч 3M</li>
+          <li>Поворот устройства на 360 градусов</li>
+          <li>Корпус 75 × 65 × 35 мм</li>
+        </ul>
+      </div>
+      <div class="media media--card">
+        <img src="assets/bravo-s-pro/3.webp" alt="Магнитное крепление на лобовое стекло" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРИЛОЖЕНИЕ -->
+  <section class="container section">
+    <div class="split">
+      <div class="split__text">
+        <h2 class="h2">База камер обновляется<br>каждый день</h2>
+        <p class="body">Прибор соединяется с телефоном по Wi-Fi через приложение INSPECTOR Wi-Fi Master.
+          Единая база камер России и стран СНГ обновляется ежедневно — новые комплексы попадают
+          в прибор сразу, а не через год вместе с прошивкой.</p>
+        <div class="row row--chips">
+          <span class="chip">Автобусные полосы</span>
+          <span class="chip">Контроль остановки</span>
+          <span class="chip">Мобильные засады</span>
+          <span class="chip">Пешеходный переход</span>
+          <span class="chip">Посты ДПС</span>
+          <span class="chip">Проезд светофора</span>
+        </div>
+        <ul class="facts">
+          <li>Просмотр и выгрузка записей с телефона</li>
+          <li>Настройка режимов Город и Трасса, пороги 60 и 90 км/ч</li>
+          <li>Приложение для App Store и Google Play</li>
+        </ul>
+      </div>
+      <div class="media media--card">
+        <img src="assets/bravo-s-pro/6.webp" alt="Приложение INSPECTOR Wi-Fi Master и обновление базы камер" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- УПРАВЛЕНИЕ -->
+  <section class="container section">
+    <div class="split split--flip">
+      <div class="split__text">
+        <h2 class="h2">Пять кнопок,<br>всё под пальцем</h2>
+        <p class="body">У каждой кнопки два действия: короткое нажатие и длинное. Ничего
+          не нужно искать в меню на ходу.</p>
+        <div class="grid" style="gap:12px">
+          <div class="card" style="padding:18px;gap:8px">
+            <span class="label">01</span>
+            <div class="control__row"><span class="control__k">Длинное</span><span>Кнопка питания</span></div>
+            <div class="control__row"><span class="control__k">Короткое</span><span>Включить или выключить экран</span></div>
+          </div>
+          <div class="card" style="padding:18px;gap:8px">
+            <span class="label">02</span>
+            <div class="control__row"><span class="control__k">Длинное</span><span>Старт и стоп видеозаписи</span></div>
+            <div class="control__row"><span class="control__k">Короткое</span><span>Защита записи от перезаписи</span></div>
+          </div>
+          <div class="card" style="padding:18px;gap:8px">
+            <span class="label">03</span>
+            <div class="control__row"><span class="control__k">Длинное</span><span>Регулировка громкости</span></div>
+            <div class="control__row"><span class="control__k">Короткое</span><span>Регулировка яркости</span></div>
+          </div>
+          <div class="card" style="padding:18px;gap:8px">
+            <span class="label">04</span>
+            <div class="control__row"><span class="control__k">Длинное</span><span>Выбор режимов</span></div>
+            <div class="control__row"><span class="control__k">Короткое</span><span>Добавление пометок</span></div>
+          </div>
+          <div class="card" style="padding:18px;gap:8px">
+            <span class="label">05</span>
+            <div class="control__row"><span class="control__k">Длинное</span><span>Вход в меню настроек</span></div>
+            <div class="control__row"><span class="control__k">Короткое</span><span>Включить или выключить Wi-Fi</span></div>
+          </div>
+        </div>
+        <p class="fine">На боковой грани — слот для карты памяти micro SD и кнопка перезагрузки Reset.</p>
+      </div>
+      <div class="media media--card">
+        <img src="assets/bravo-s-pro/5.webp" alt="Элементы управления видеорегистратора" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОДЛИННОСТЬ -->
+  <section class="container section">
+    <div class="split">
+      <div class="split__text">
+        <h2 class="h2">У каждого экземпляра<br>свой серийный номер</h2>
+        <p class="body">Номер нанесён на корпус прибора. По нему подтверждается подлинность
+          устройства и работает гарантийное обслуживание — с подделкой этот номер не совпадёт.</p>
+        <ul class="facts">
+          <li>Серийный номер на корпусе</li>
+          <li>Гарантийное обслуживание и поддержка покупателей</li>
+          <li>Производство — Корея</li>
+        </ul>
+      </div>
+      <div class="media media--card">
+        <img src="assets/bravo-s-pro/4.webp" alt="Серийный номер на корпусе устройства" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- КОМПЛЕКТАЦИЯ И ХАРАКТЕРИСТИКИ -->
+  <section id="specs" class="container section">
+    <div class="split split--flip">
+      <div class="split__text" style="align-self:start;width:100%">
+        <div class="panel" style="width:100%">
+          <span class="h3">Что в коробке</span>
+          <ul class="facts" style="margin-top:20px">
+            <li>Видеорегистратор с радар-детектором</li>
+            <li>Магнитное крепление со скотчем 3M</li>
+            <li>Адаптер питания</li>
+            <li>Картридер</li>
+            <li>Гарантийный талон и инструкция</li>
+          </ul>
+        </div>
+        <div class="panel panel--outlined" style="width:100%">
+          <span class="h3">Характеристики</span>
+          <div class="specs" style="margin-top:20px">
+            <span class="specs__key">Тип устройства</span><span class="specs__val">Комбо 2 в 1</span>
+            <span class="specs__key">Видеозапись</span><span class="specs__val">1080p Full HD</span>
+            <span class="specs__key">Радарная часть</span><span class="specs__val">Сигнатурная, LNA</span>
+            <span class="specs__key">База камер</span><span class="specs__val">Россия и СНГ</span>
+            <span class="specs__key">Обновление базы</span><span class="specs__val">Ежедневно</span>
+            <span class="specs__key">Связь с телефоном</span><span class="specs__val">Wi-Fi</span>
+            <span class="specs__key">Носитель</span><span class="specs__val">micro SD</span>
+            <span class="specs__key">Крепление</span><span class="specs__val">Магнит, 360°</span>
+            <span class="specs__key">Размеры</span><span class="specs__val">75 × 65 × 35 мм</span>
+            <span class="specs__key">Производство</span><span class="specs__val">Корея</span>
+          </div>
+        </div>
+      </div>
+      <div class="media media--card">
+        <img src="assets/bravo-s-pro/11.webp" alt="Комплектация видеорегистратора" width="900" height="1200" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ГАЛЕРЕЯ -->
+  <section class="container section">
+    <div class="section__head">
+      <h2 class="h2">Приложение изнутри</h2>
+    </div>
+    <div class="gallery">
+      <div class="media media--card"><img src="assets/bravo-s-pro/7.webp" alt="Просмотр записей через приложение" width="900" height="1200" loading="lazy"></div>
+      <div class="media media--card"><img src="assets/bravo-s-pro/8.webp" alt="Настройки видеорегистратора в приложении" width="900" height="1200" loading="lazy"></div>
+      <div class="media media--card"><img src="assets/bravo-s-pro/9.webp" alt="Официальное приложение INSPECTOR Wi-Fi Master" width="900" height="1200" loading="lazy"></div>
+      <div class="media media--card"><img src="assets/bravo-s-pro/10.webp" alt="Типы камер фиксации в базе прибора" width="900" height="1200" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container section">
+    <div class="section__head">
+      <h2 class="h2">Коротко о важном</h2>
+    </div>
+    <div class="faq">
+      <div class="faq__row">
+        <span class="faq__q">Нужна ли карта памяти?</span>
+        <span class="body">Да, запись ведётся на micro SD — слот на боковой грани. В комплект карта
+          не входит, её нужно купить отдельно.</span>
+      </div>
+      <div class="faq__row">
+        <span class="faq__q">Как часто обновляется база камер?</span>
+        <span class="body">Каждый день. Обновление приходит по Wi-Fi через приложение, снимать прибор
+          со стекла и нести к компьютеру не нужно.</span>
+      </div>
+      <div class="faq__row">
+        <span class="faq__q">Прибор можно быстро снять?</span>
+        <span class="body">Да. Площадка на скотче 3M остаётся на стекле, само устройство держится
+          на магните и снимается одним движением.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФИНАЛЬНЫЙ CTA -->
+  <section class="container section">
+    <div class="cta">
+      <div>
+        <h2 class="h2">Один прибор<br>вместо двух</h2>
+        <p>Оформление, оплата и доставка — на стороне Wildberries. Проверить устройство можно
+          при получении в пункте выдачи.</p>
+      </div>
+      <div class="cta__side">
+        <a class="btn btn--wb btn--lg buy" href="ССЫЛКА_НА_WILDBERRIES" target="_blank" rel="noopener" data-nm="0000000">
+          Купить на Wildberries
+        </a>
+        <span class="cta__note">Актуальная цена — в карточке товара на Wildberries</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР / ЮРИДИЧЕСКИЙ БЛОК -->
+  <footer class="foot">
+    <div class="container">
+      <div class="foot__grid">
+        <div class="foot__col">
+          <span class="label">ПРОДАВЕЦ</span>
+          <div>
+            ИП Фамилия Имя Отчество<br>
+            ИНН 000000000000<br>
+            ОГРНИП 000000000000000
+          </div>
+        </div>
+        <div class="foot__col">
+          <span class="label">КОНТАКТЫ</span>
+          <div>
+            Телефон: +7 (000) 000-00-00<br>
+            E-mail: mail@example.ru
+          </div>
+        </div>
+        <div class="foot__col">
+          <span class="label">ДОКУМЕНТЫ</span>
+          <div>
+            <a href="#">Политика конфиденциальности</a><br>
+            <a href="#">Публичная оферта</a>
+          </div>
+        </div>
+      </div>
+      <div class="disclaimer fine">
+        Оформление заказа, оплата и доставка осуществляются на сайте Wildberries. Характеристики
+        и комплектация приведены по данным карточки товара; актуальная стоимость указана
+        в карточке на Wildberries.
+        © <span id="year"></span> CHIPORT Store. Все права защищены.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
