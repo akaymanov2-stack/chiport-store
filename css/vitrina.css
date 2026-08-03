@@ -20,17 +20,28 @@
   transition:border-color .18s ease;
 }
 .product:hover{border-color:var(--border-strong)}
+/* Рамка 3:4 — родной формат карточек Wildberries (900×1200). Совпадение
+   пропорций рамки и исходника означает, что cover ничего не режет: слайд
+   встаёт впритык, без обрезанного заголовка сверху и плашек снизу.
+   Меняя это значение, проверьте все карточки каталога разом. */
 .product__media{
-  aspect-ratio:1/1;
+  aspect-ratio:3/4;
   background:var(--panel);
   background-size:cover;background-position:center;
   border-bottom:1px solid var(--border);
   position:relative;
 }
-/* Фото с прозрачным фоном и вытянутыми пропорциями (device-hero.png — 348×1085)
-   вписываем целиком: cover обрезал бы прибор до середины корпуса.
-   Прозрачный PNG ложится на --panel, как на панели героя в лендинге. */
-.product__media--fit{background-size:auto 86%;background-repeat:no-repeat}
+
+/* Для изображений, у которых пропорции НЕ 3:4, — вписываем целиком вместо
+   обрезки. Так лежит фото прибора с прозрачным фоном (device-hero.png,
+   348×1085): cover обрезал бы его до середины корпуса.
+   background-origin + padding дают поля, чтобы картинка не упиралась в края. */
+.product__media--fit{
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-origin:content-box;
+  padding:18px;
+}
 
 /* Чип-категория поверх фото: белая заливка вместо тени — тень в системе одна */
 .product__media .chip{
