@@ -1,0 +1,60 @@
+/* ============================================================================
+   СТРАНИЦА ТОВАРА — стили
+
+   Общий каркас (шапка, герой, футер, CTA, .btn--wb) — в css/site.css,
+   токены и компоненты — в css/design-system.css. Оба подключаются раньше.
+   Здесь только то, чего нет ни там, ни там.
+
+   Файл общий для всех страниц товаров, а не только для Bravo S Pro:
+   специфику конкретного товара держать в разметке, не здесь.
+   ========================================================================= */
+
+/* ═══ Герой с фотографией ═════════════════════════════════════════════════ */
+.hero--media{
+  display:grid;gap:56px;align-items:center;
+  grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+}
+
+/* ═══ Кадр под изображение ════════════════════════════════════════════════
+   Карточки маркетплейса — вертикальные 3:4 с вшитым текстом. Кладём их
+   на системную панель целиком, без обрезки: cover срезал бы подписи.
+   ======================================================================== */
+.media{
+  background:var(--panel);
+  border-radius:var(--r-block);
+  overflow:hidden;
+}
+.media img{display:block;width:100%;height:auto}
+.media--card{border-radius:var(--r-card)}
+
+/* ═══ Секция «текст рядом с изображением» ═════════════════════════════════ */
+.split{
+  display:grid;gap:40px;align-items:center;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+}
+.split__text{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+/* Изображение слева, текст справа — для чередования секций */
+.split--flip .media{order:-1}
+
+/* ═══ Список фактов ═══════════════════════════════════════════════════════ */
+.facts{display:flex;flex-direction:column;gap:12px}
+.facts li{
+  display:flex;gap:12px;align-items:baseline;
+  font:400 15.5px/1.55 var(--font);color:var(--text-secondary);
+  list-style:none;
+}
+.facts li::before{
+  content:"";flex:none;
+  width:8px;height:8px;margin-top:6px;
+  border-radius:var(--r-pill);background:var(--accent);
+}
+
+/* ═══ Элементы управления ═════════════════════════════════════════════════ */
+.control__row{display:flex;gap:10px;font:400 14.5px/1.45 var(--font);color:var(--text-secondary)}
+.control__k{flex:none;width:76px;font-weight:700;color:var(--text-faint)}
+
+/* ═══ Галерея карточек маркетплейса ═══════════════════════════════════════ */
+.gallery{
+  display:grid;gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+}
